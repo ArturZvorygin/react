@@ -42,17 +42,17 @@ app.post('/registration', async (req, res) => {
         //duplicate key
         if (err && err.code === 11000) {
             res.json({
-                message: 'Попытка создания дубликата!'
+                message: 'Вы создаёте дубликат!'
             })
                 .status(400)
-            console.error('Попытка создания дубликата!')
+            console.error('Вы создаёте дубликат!')
 
             return
         }
     }
 
     res.json({
-        message: 'Вы успешно зарегистрировались!'
+        message: 'Аккаунт успешно зарегистрирован!'
     })
 })
 
@@ -144,17 +144,17 @@ app.post('/user/changeEmail', async (req, res) => {
         //duplicate key
         if (err && err.code === 11000) {
             res.json({
-                message: 'Попытка создания дубликата!'
+                message: 'Вы создаёте дубликат!'
             })
                 .status(400)
-            console.error('Попытка создания дубликата!')
+            console.error('Вы создаёте дубликат!')
 
             return
         }
     }
 
     res.json({
-        message: 'E-Mail изменён! Для применения изменений заново авторизуйтесь!',
+        message: 'E-Mail изменён! Для применения изменений заново залогиньтесь!',
         newEmail: user.email
     })
 })
@@ -206,7 +206,7 @@ app.post('/products/add', async (req, res) => {
     }
 
     res.json({
-        message: 'Товар успешно добавлен! Обновите страницу для получения изменений.'
+        message: 'Товар успешно добавлен! Обновите страницу для применения изменений.'
     })
 })
 
